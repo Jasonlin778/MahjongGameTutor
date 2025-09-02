@@ -15,11 +15,11 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 53
+    y: 56
     width: 1440
     height: 791
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17
+  controlID: 7114
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 7115
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19
+  controlID: 7116
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 19
+    y: 86
     width: 866.5
     height: 411.5
   m_SerializedDataModeController:
@@ -355,7 +355,7 @@ MonoBehaviour:
       y: 21
       width: 866.5
       height: 390.5
-    m_Scale: {x: 1.2589254, y: 1.2589254}
+    m_Scale: {x: 0.72314817, y: 0.72314817}
     m_Translation: {x: 433.25, y: 195.25}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -363,10 +363,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -344.1427
-      y: -155.09259
-      width: 688.2854
-      height: 310.18518
+      x: -599.1165
+      y: -270
+      width: 1198.233
+      height: 540
     m_MinimalGUI: 1
   m_defaultScale: 0.72314817
   m_LastWindowPixelSize: {x: 1733, y: 823}
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 83
+    y: 86
     width: 866.5
     height: 411.5
   m_SerializedDataModeController:
@@ -770,9 +770,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -1.017005, y: -2.0896628, z: -0.08253617}
     speed: 2
-    m_Value: {x: -228.35992, y: 76.456604, z: 212.51358}
+    m_Value: {x: -1.017005, y: -2.0896628, z: -0.08253617}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -818,20 +818,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: 0.26068097, y: -0.22618726, z: 0.06296434, w: 0.93644226}
     speed: 2
-    m_Value: {x: -0.09579052, y: 0.8689372, z: -0.18548882, w: -0.4487386}
+    m_Value: {x: -0.26068097, y: 0.22618726, z: -0.06296434, w: -0.93644226}
   m_Size:
-    m_Target: 10
+    m_Target: 4.764149
     speed: 2
-    m_Value: 1428.2281
+    m_Value: 4.764149
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.005995
+    m_SpeedNormalized: 0.5005
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -903,8 +903,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 868.5
-    y: 19
+    x: 867.5
+    y: 86
     width: 256
     height: 411.5
   m_SerializedDataModeController:
@@ -920,9 +920,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1e620000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3cdbffff7cdbffffecdbffff10fbffff
+      m_ExpandedIDs: 1cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 515.5
+    y: 518.5
     width: 1124.5
     height: 287.5
   m_SerializedDataModeController:
@@ -991,7 +991,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -999,16 +999,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 54
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: 54
   m_LastProjectPath: /Users/jasonlin778/Desktop/20250829MahjongGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 56.5}
-    m_SelectedIDs: c4580000
-    m_LastClickedID: 22724
-    m_ExpandedIDs: 000000003659000000ca9a3bffffff7f
+    m_SelectedIDs: 945a0000
+    m_LastClickedID: 23188
+    m_ExpandedIDs: 000000008c5a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1036,7 +1036,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 000000008c5a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 515.5
+    y: 518.5
     width: 1124.5
     height: 287.5
   m_SerializedDataModeController:
@@ -1146,8 +1146,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1126.5
-    y: 19
+    x: 1125.5
+    y: 86
     width: 313.5
     height: 720
   m_SerializedDataModeController:
