@@ -13,6 +13,10 @@ public class GameManagerScript : MonoBehaviour
 
     // 宣告一個資料型別為GameObject的變數，命名為mahjong
     public GameObject majhong;
+    public Transform p1Cards;
+    public Transform p2Cards;
+    public Transform p3Cards;
+    public Transform p4Cards;
 
     // Start is called before the first frame update
     // start這個功能會在update的第一幀的畫面前被呼叫執行
@@ -55,23 +59,27 @@ public class GameManagerScript : MonoBehaviour
             //字串可以做加法，沒有減法
 
             //自己
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.95f, -3.8f), Quaternion.Euler(270, 0, 0));
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.75f, -3.8f), Quaternion.Euler(270, 0, 0));
+            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.95f, -2.8f), Quaternion.Euler(270, 0, 0), p1Cards);
+            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.75f, -2.8f), Quaternion.Euler(270, 0, 0), p1Cards);
 
             //上家
-            Instantiate(majhong, new Vector3(-3.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0));
-            Instantiate(majhong, new Vector3(-3.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0));
+            Instantiate(majhong, new Vector3(-2.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 90, 0), p4Cards);
+            Instantiate(majhong, new Vector3(-2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 90, 0), p4Cards);
 
             //對家
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.95f, 3.8f), Quaternion.Euler(270, 0, 0));
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.75f, 3.8f), Quaternion.Euler(270, 0, 0));
+            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.95f, 2.8f), Quaternion.Euler(270, 0, 0), p2Cards);
+            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.75f, 2.8f), Quaternion.Euler(270, 0, 0), p2Cards);
 
             //下家
-            Instantiate(majhong, new Vector3(3.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0));
-            Instantiate(majhong, new Vector3(3.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0));
+            Instantiate(majhong, new Vector3(2.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 90, 0), p3Cards);
+            Instantiate(majhong, new Vector3(2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 90, 0), p3Cards);
             Debug.Log("第" + i + "次迴圈");
         }
 
+        p1Cards.rotation = Quaternion.Euler(0, 20, 0);
+        p2Cards.rotation = Quaternion.Euler(0, 20, 0);
+        p3Cards.rotation = Quaternion.Euler(0, 20, 0);
+        p4Cards.rotation = Quaternion.Euler(0, 20, 0);
         Debug.Log("執行start");
     }
 
