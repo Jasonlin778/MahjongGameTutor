@@ -1,0 +1,38 @@
+# Unity 產生的暫存與快取
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# 自動產生的設定與快取
+.obj/
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Visual Studio / Rider / VSCode 等 IDE 設定
+.vscode/
+.idea/
+*.user
+*.suo
+*.tmp
+*.userprefs
+
+# 作業系統暫存檔
+.DS_Store
+Thumbs.db
+
+# Package 快取 (Unity 會自己重新下載)
+[Pp]ackages/com.unity.package-manager/
+
+# Crash / Debug / Profiling
+sysinfo.txt
+*.stackdump
+

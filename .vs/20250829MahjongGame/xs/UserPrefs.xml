@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{A855F9F8-08AC-25A9-5C91-59D84C2C6A22}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GM.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManagerScript.cs" Line="80" Column="55" />
-      <File FileName="Assets/Scripts/GM.cs" Line="175" Column="18" />
+      <File FileName="Assets/Scripts/GM.cs" Line="110" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="17041541-5f1d-4ba1-8af0-074bbfebe245" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1d19cc9f-fcee-44ac-b8a3-abe27751020d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
