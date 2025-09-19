@@ -28,6 +28,7 @@ public class GM : MonoBehaviour
 
     // Start is called before the first frame update
     // start這個功能會在update的第一幀的畫面前被呼叫執行，也就是一開始會執行一次
+    // 遊戲開始時或是這個物件剛生成時會執行一次
     // Start()這個功能是由UnityEngine這個函式庫提供的，因此沒有寫"using UnityEngine"的話就不會在第一幀的畫面前被呼叫執行
     void Start()
     {
@@ -146,7 +147,7 @@ public class [物品名稱] : MonoBehavior
         return [回傳值，若無則不填];
     }
     // 你要知道的：
-    public void [函數名字](){
+    (public/private) void [函數名字](){
         
     }
     // void：空白、無東西的
@@ -177,14 +178,14 @@ public class [物品名稱] : MonoBehavior
     // 函數命名習慣，每個單字的第一個字為大寫
     // 程式的寫法
     // 第一個：催促作業
-    void HomeWork(){
+    void Homework(){
         Debug.Log("記得要寫作業，不會的要問，不要壓死線喔！");
     }
 
     // 第二個：計算學費
     void Money(){
         Debug.Log("學費為：" + (800 * 2));
-        輸出內容：學費為：1600
+        //輸出內容：學費為：1600
     }
 
     以下的部分跟數學有關，數學的寫法

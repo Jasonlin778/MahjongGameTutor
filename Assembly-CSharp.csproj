@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/GameManagerScript.cs" />
+    <Compile Include="Assets/Scripts/Math.cs" />
     <Compile Include="Assets/Scripts/GM.cs" />
   </ItemGroup>
   <ItemGroup>
