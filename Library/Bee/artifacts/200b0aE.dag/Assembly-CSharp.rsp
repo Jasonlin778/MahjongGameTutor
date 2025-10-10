@@ -356,6 +356,7 @@
 "Assets/Scripts/GameManagerScript.cs"
 "Assets/Scripts/GM.cs"
 "Assets/Scripts/Math.cs"
+"Assets/Scripts/UIMahjong.cs"
 -langversion:9.0
 
 /deterministic

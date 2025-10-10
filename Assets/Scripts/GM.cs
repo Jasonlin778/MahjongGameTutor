@@ -20,11 +20,18 @@ using UnityEngine; // UnityEngine：遊戲引擎，跟Unity本身的基礎功能
 // 一個類別，他就是一個物件
 public class GM : MonoBehaviour
 {
+    //如果宣告的變數要給本腳本所有功能、函式、函數使用的話，要宣告在這裡，宣告物件的大括號當中
 
     // 宣告一個資料型別為GameObject(遊戲物件)的變數，命名為mahjong
     public GameObject majhong;
     public Vector3 secret = new Vector3(60.85f, 72.4f, 83.7f);
     public Transform mountain;
+    public int[] order = new int[136]; // 宣告一個長度為136的整數陣列
+    // 0 - 3 : 1m
+    // 4 - 7 : 2m
+
+    // 陣列宣告方式
+    // (public) [資料型別][] [變數名稱] = new [資料型別][陣列大小];
 
     // Start is called before the first frame update
     // start這個功能會在update的第一幀的畫面前被呼叫執行，也就是一開始會執行一次
@@ -32,7 +39,48 @@ public class GM : MonoBehaviour
     // Start()這個功能是由UnityEngine這個函式庫提供的，因此沒有寫"using UnityEngine"的話就不會在第一幀的畫面前被呼叫執行
     void Start()
     {
-        
+        // != 就是不等於
+        // i != 136
+        // i < 136
+        // !(i == 136)
+
+        //當i = 0的時候，就讓order的第0個變數存入0
+        //當i = 1的時候，就讓order的第1個變數存入1
+        //當i = 2的時候，就讓order的第2個變數存入2
+        //...
+        //公式(迴圈規則)當i = n的時候，就讓order的第n個變數存入n
+        for (int i = 0; i != 136; i = i + 1)
+        {
+            // 取得陣列當中的特定變數
+            // 變數名稱[索引值] = [算式(i+3)/常數(3)/變數(i)]
+            order[i] = i;
+        }
+        // 平均洗牌的簡單方式：有一串數列，長度為n。從最後一個數開始隨機跟一個在它之前或自己的數交換，
+        // 有可能因為選中要交換的數是最後一個而不交換，從最後一個順序一路執行到第一個順序，如此一來此序列會被洗均勻
+        for (int i = 135; i >= 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            // 我們抽好要跟order[i]交換的順序了
+            // order[i(從尾到頭)] 會跟 order[j(隨機)]
+
+            
+        }
+        // minimum inclusive 包含最小值
+        // maximum exclusive 不含最大值
+
+        /* A = B 代表把右邊的東西計算完後儲存在左邊的東西裡
+           
+         */
+        // 交換兩個變數的值？
+        int a = 3;
+        int b = 1;
+        int c;
+        c = a; // a = 3, b = 1, c = 3
+        a = b; // a = 1, b = 1, c = 3
+        b = c; // b = 3, a = 1, c = 3
+        Debug.Log("a是" + a + "，b是" + b);
+        //a = 1, b = 3
+
         // Debug.Log("字串")：輸出指定的訊息至Unity的Console主控台中，可以用來除錯使用
         //這個功能可以傳一個字串進去
         //字串可以做加法，沒有減法
@@ -43,6 +91,7 @@ public class GM : MonoBehaviour
     // update這個功能每一幀的畫面會被呼叫執行一次，也就是一秒大概執行大約60次
     void Update()
     {
+
         Debug.Log("執行update");
     }
 
