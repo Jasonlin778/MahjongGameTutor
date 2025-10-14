@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{A855F9F8-08AC-25A9-5C91-59D84C2C6A22}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GM.cs">
     <Files>
-      <File FileName="Assets/Scripts/GM.cs" Line="80" Column="12" />
-      <File FileName="Assets/Scripts/Math.cs" Line="10" Column="9" />
-      <File FileName="Assets/Scripts/UIMahjong.cs" Line="21" Column="9" />
+      <File FileName="Assets/Scripts/GM.cs" Line="214" Column="9" />
+      <File FileName="Assets/Scripts/Math.cs" />
+      <File FileName="Assets/Scripts/GameManagerScript.cs" Line="16" Column="24" />
+      <File FileName="Assets/Scripts/UIMahjong.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e5b2d334-16f3-4a44-ab5b-b4c435b72620" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0ef32973-bb9f-437a-af4b-0cfe9828cd1b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
