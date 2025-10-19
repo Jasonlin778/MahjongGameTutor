@@ -6,6 +6,9 @@
 using System.Collections; // System：系統，跟背景系統有關的東西，但平常比較不會用到，可能是在檔案讀取跟寫入才會用到
 using System.Collections.Generic;
 using UnityEngine; // UnityEngine：遊戲引擎，跟Unity本身的基礎功能有關，最常用到
+using UnityEngine.UI; // UnityEngine.UI：遊戲引擎，跟Unity的使用者介面有關
+using TMPro; // 跟TextMeshPro文字顯示有關，也很常用到
+
 /*
    多行註解 (僅作為說明用)
    第一行
@@ -23,13 +26,15 @@ public class GM : MonoBehaviour
     //如果宣告的變數要給本腳本所有功能、函式、函數使用的話，要宣告在這裡，宣告物件的大括號當中
 
     // 宣告一個資料型別為GameObject(遊戲物件)的變數，命名為mahjong
-    public GameObject majhong;
+    public GameObject mahjong;
+    public GameObject mahjongUI;
     public Vector3 secret = new Vector3(60.85f, 72.4f, 83.7f);
     public Transform mountain;
+    public Transform playerHandTransform;
     public int[] order = new int[136]; // 宣告一個長度為136的整數陣列
+    public int[] playerHand = new int[20]; // 數字設置20只是為了保留一點空間
     // 0 - 3 : 1m
     // 4 - 7 : 2m
-
     // 陣列宣告方式
     // (public) [資料型別][] [變數名稱] = new [資料型別][陣列大小];
 
@@ -92,14 +97,68 @@ public class GM : MonoBehaviour
 
         // 排序完之後每個玩家要抓13張牌，不過需要建立一個轉換表
         // 讓玩家知道他摸到順序3的牌是1萬、順序6的牌是2萬，以此類推......
-
         // 呼叫函式：函式名稱(參數)
         // for 迴圈內容只有一行時也能縮約
         for (int i = 0; i < 13; i++)
+        {
             Debug.Log("第" + i + "張牌的順序是：" + order[i] +
                 "，牌面的字是：" + OrderToWord(order[i]));
+            playerHand[i] = order[i];
+            /*
+            Vector3 pos = new Vector3(-870 + 130 * i, -400, 0);
+            GameObject mah = Instantiate(mahjongUI, playerHandTransform);
+            mah.transform.localPosition = pos;
+            mah.transform.localScale = new Vector3(200 , 200 ,200);
+            mah.transform.GetChild(2).GetComponent<TextMeshPro>().text = OrderToWord(order[i]);
+            */
+            // Instantiate也是一個函式，而函式可能會有回傳值(例如我們之前自訂的函式OrderToWord()會回傳字串)
+            // 所以Instantiate有一個GameObject回傳值，我們可以用變數去儲存他
+            // 只要知道遊戲物件，就可以取得他的transform
+            // 只要取得遊戲物件的transform，就能更改他的transform的數值了(例如座標、旋轉角度等)
+            // 遊戲物件名稱.transform 取得指定遊戲物件的transform component
+            // 遊戲物件名稱.transform.rotation 代表指定遊戲物件的當前旋轉角度
 
+            // 我們可以對transform做的更改：
+            // transform.position = Vector3，更改以世界座標作為座標系的座標(不一定是螢幕上顯示的數值)
+            // transform.rotation = Quaternion.Euler(Vector3)，更改旋轉角度
 
+            // transform.localPosition = Vector3，更改以父物件作為標系的座標(也就是螢幕上顯示的數值)
+            // transform.localRotation = Quaternion.Euler(Vector3)，更改旋轉角度
+            // transform.localScale = 更改尺寸
+
+            // mah.transform.GetChild(整數i) = 取得此物件的第i個子物件，以0開始編號
+            // transform.GetComponent<資料型別>() = 取得此物件當中的某個資料型別的component
+        }
+
+        // 作業，詢問AI後跟我解釋這段程式碼在做什麼
+        // 選擇排序
+        // 固定要交換的最大值的位置
+        for(int i = 12; i >= 0; i--)
+        {
+            // 對於還沒有排序好的數字當中挑選最大值
+            int max = -1;
+            int index = -1;
+            for (int j = 0; j <= i; j++)
+            {
+                if (playerHand[j] > max)
+                {
+                    max = playerHand[j];
+                    index = j;
+                }
+            }
+            if (index == -1) continue;
+            playerHand[index] = playerHand[i];
+            playerHand[i] = max;
+        }
+
+        for(int i = 0; i < 13; i++)
+        {
+            Vector3 pos = new Vector3(-870 + 130 * i, -400, 0);
+            GameObject mah = Instantiate(mahjongUI, playerHandTransform);
+            mah.transform.localPosition = pos;
+            mah.transform.localScale = new Vector3(200, 200, 200);
+            mah.transform.GetChild(2).GetComponent<TextMeshPro>().text = OrderToWord(playerHand[i]);
+        }
         // Debug.Log("字串")：輸出指定的訊息至Unity的Console主控台中，可以用來除錯使用
         //這個功能可以傳一個字串進去
         //字串可以做加法，沒有減法
@@ -159,20 +218,20 @@ public class GM : MonoBehaviour
             // 向量 Vector3：是一種資料型別，可以儲存3個float，依序為x,y,z
 
             //自己
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.95f, -2.8f), Quaternion.Euler(270, 0, 0), mountain);
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.75f, -2.8f), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(-2.4f + (i * 0.3f), -0.95f, -2.8f), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(-2.4f + (i * 0.3f), -0.75f, -2.8f), Quaternion.Euler(270, 0, 0), mountain);
 
             //上家
-            Instantiate(majhong, new Vector3(-2.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
-            Instantiate(majhong, new Vector3(-2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(-2.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(-2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
 
             //對家
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.95f, 2.8f), Quaternion.Euler(270, 0, 0), mountain);
-            Instantiate(majhong, new Vector3(-2.4f + (i * 0.3f), -0.75f, 2.8f), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(-2.4f + (i * 0.3f), -0.95f, 2.8f), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(-2.4f + (i * 0.3f), -0.75f, 2.8f), Quaternion.Euler(270, 0, 0), mountain);
 
             //下家
-            Instantiate(majhong, new Vector3(2.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
-            Instantiate(majhong, new Vector3(2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(2.8f, -0.95f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
+            Instantiate(mahjong, new Vector3(2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
             Debug.Log("第" + i + "次迴圈");
         }
         mountain.rotation = Quaternion.Euler(0, 20, 0);
