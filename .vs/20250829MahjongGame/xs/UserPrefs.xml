@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{A855F9F8-08AC-25A9-5C91-59D84C2C6A22}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIMahjong.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GM.cs">
     <Files>
-      <File FileName="Assets/Scripts/GM.cs" Line="152" Column="10" />
-      <File FileName="Assets/Scripts/Math.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GM.cs" Line="83" Column="17" />
+      <File FileName="Assets/Scripts/Math.cs" Line="1" Column="2" />
       <File FileName="Assets/Scripts/UIMahjong.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -130,23 +130,57 @@ public class GM : MonoBehaviour
             // transform.GetComponent<資料型別>() = 取得此物件當中的某個資料型別的component
         }
 
+        // 巢狀迴圈練習：99乘法表
+        Debug.Log("99乘法表練習");
+        for(int i = 1; i <= 9; i++)
+        {
+            for(int j = 1;j <= 9; j++)
+            {
+                Debug.Log(i + "*" + j + "=" + (i * j));
+            }
+        }
+
+        // 巢狀迴圈練習：印出奇數金字塔星星
+        // Debug.Log(s)不能放在以下註解的地方 //
+        for(int i = 1; i <= 5; i++)
+        {
+            // s還沒有被宣告就使用了，編譯錯誤
+            string s = "";
+            // s只是空字串，連星星都還沒加，所以每次都會印出""
+            for(int j = 1; j <= 2 * i - 1; j++)
+            {
+                s = s + "*";
+                
+                // 每次s加上一個星星時，就印出來，這樣會印出1+3+5+7+9=25行星星
+            }
+            Debug.Log(s);// 正確選擇。字串被宣告後，星星也加完了，就能正常輸出
+
+            // 每次迴圈執行完時，在迴圈中宣告的所有變數的紀錄會遺失
+        }
+        // 希望你們學會回圈當中的終止條件、起始條件的變動，並非每次都固定值
+        // 順序問題，一段程式到底該放在迴圈中的什麼位置，不同位置都可能會有差異很大的結果
+        // 無論裡面的程式怎麼寫，執行結果如何，我希望你們都能用回圈一次次分析的方式告訴我為何執行結果會長那樣
+
         // 作業，詢問AI後跟我解釋這段程式碼在做什麼
         // 選擇排序
         // 固定要交換的最大值的位置
-        for(int i = 12; i >= 0; i--)
+        for (int i = 12; i >= 0; i--)
         {
             // 對於還沒有排序好的數字當中挑選最大值
-            int max = -1;
-            int index = -1;
+            int max = -1; // max：當前尋找範圍中的最大值
+            int index = -1; // index：當前尋找範圍中的最大值之索引值
+            // 尋找最大值的範圍會隨著i改變範圍
             for (int j = 0; j <= i; j++)
             {
+                // if(選擇條件){}：如果選擇條件的結果是正確的，就執行大括號裡面的內容，否則就不執行
                 if (playerHand[j] > max)
                 {
                     max = playerHand[j];
                     index = j;
                 }
             }
-            if (index == -1) continue;
+            // playerHand[index], playerHand[i] 交換位置
+            // 請仔細思考為什麼只要寫兩行就好，我在交換過程中的暫存變數是誰？max
             playerHand[index] = playerHand[i];
             playerHand[i] = max;
         }
@@ -170,7 +204,7 @@ public class GM : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("執行update");
+        //Debug.Log("執行update");
     }
 
     public void StartGame()
