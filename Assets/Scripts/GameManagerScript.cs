@@ -17,7 +17,6 @@ public class GameManagerScript : MonoBehaviour
     public Transform p2Cards;
     public Transform p3Cards;
     public Transform p4Cards;
-
     // Start is called before the first frame update
     // start這個功能會在update的第一幀的畫面前被呼叫執行
     void Start()

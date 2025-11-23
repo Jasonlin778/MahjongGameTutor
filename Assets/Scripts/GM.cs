@@ -33,6 +33,7 @@ public class GM : MonoBehaviour
     public Transform playerHandTransform;
     public int[] order = new int[136]; // 宣告一個長度為136的整數陣列
     public int[] playerHand = new int[20]; // 數字設置20只是為了保留一點空間
+    public int playTime = 0;
     // 0 - 3 : 1m
     // 4 - 7 : 2m
     // 陣列宣告方式
@@ -268,7 +269,8 @@ public class GM : MonoBehaviour
             Instantiate(mahjong, new Vector3(2.8f, -0.75f, -2.4f + (i * 0.3f)), Quaternion.Euler(270, 0, 0), mountain);
             Debug.Log("第" + i + "次迴圈");
         }
-        mountain.rotation = Quaternion.Euler(0, 20, 0);
+        // 旋轉牌山角度
+        // mountain.rotation = Quaternion.Euler(0, 20, 0);
     }
 
     // 宣告並建構一個自訂函式，給定順序這個參數，便能回傳他對應的牌面的字

@@ -453,3 +453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234e8c7030bbc4f38907dd083a40ffb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dy: 50
+  originaly: -400
+  mahjong: {fileID: 7499553985442815381, guid: 636cf6c2635ce4b0f831e35f242710f5, type: 3}
